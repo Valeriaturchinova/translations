@@ -81,12 +81,12 @@ The  Spark cluster mode overview explains the key concepts in running on a clust
 - [Spark SQL CLI](https://spark.apache.org/docs/latest/api/python/getting_started/index.html): processing data with SQL on the command line
     - dcd
     - gfg
-        - cded
-        - cdcd
+        - nested2
+        - nested1
 
          
 - vddvv   
 
 
-1. vdv
-1. vdv
+1. first.1
+1. second.2
