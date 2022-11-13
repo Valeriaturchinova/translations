@@ -28,6 +28,9 @@ Spark работает на Java 8/11/17, Scala 2.12/2.13, Python 3.7+ и R 3.5+
 чтобы приложения использовали ту же версию Scala, для которой был скомпилирован Spark.
 Например, для Scala 2.13 нужно использовать Spark, собранный для 2.13, и компилировать приложения при помощи Scala 2.13.
 
-Для Python 3.9 оптимизация Arrow и пользовательские функции pandas могут не работать из-за проблем совместимости Python и Apache Arrow. Пожалуйста, обратитесь к [странице совместимости](https://arrow.apache.org/docs/python/install.html#python-compatibility) с Python. Для Java 11 дополнительно требуется `-Dio.netty.tryReflectionSetAccessible=true` для библиотеки Apache Arrow. Этa опция предотвращает `java.lang.UnsupportedOperationException: sun.misc.Unsafe или java.nio.DirectByteBuffer.(long, int) not available`, когда Apache Arrow использует Netty.
+Для Python 3.9 оптимизация Arrow и пользовательские функции (UDF) pandas могут не работать из-за проблем совместимости Python и Apache Arrow.
+Пожалуйста, обратитесь к [странице совместимости](https://arrow.apache.org/docs/python/install.html#python-compatibility) с Python.
+Для Java 11 дополнительно требуется `-Dio.netty.tryReflectionSetAccessible=true` для библиотеки Apache Arrow.
+Этa опция предотвращает `java.lang.UnsupportedOperationException: sun.misc.Unsafe или java.nio.DirectByteBuffer.(long, int) not available`,когда Apache Arrow использует Netty.
 
 # Запуск примеров и командная оболочка
