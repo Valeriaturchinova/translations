@@ -34,3 +34,48 @@ Spark работает на Java 8/11/17, Scala 2.12/2.13, Python 3.7+ и R 3.5+
 Этa опция предотвращает `java.lang.UnsupportedOperationException: sun.misc.Unsafe или java.nio.DirectByteBuffer.(long, int) not available`,когда Apache Arrow использует Netty.
 
 # Запуск примеров и командная оболочка
+
+Spark поставляется с набором примеров. Примеры для Scala, Java, Python и R находятся в директории `examples/src/main`.
+Чтобы запустить Spark примеры на Java или Scala, используется инструмент `bin/run-example <class> [params]`,
+который находится в корневой директории Spark.
+Для запуска приложений используется [`spark-submit`](https://spark.apache.org/docs/latest/submitting-applications.html). Например,
+```
+./bin/run-example SparkPi 10
+```
+Вы также можете запускать Spark в интерактивном режиме через модифицированную  командную оболочку Scala.
+Это отличный способ изучать как работает фреймворк.
+```
+./bin/spark-shell --master local[2]
+```
+
+В качестве значения опции `--master` можно указать:
+
+- URL запущенного кластера (`spark://HOST:PORT`);
+- `local` для локального запуска Spark в одном потоке;
+- `local[N]` для локального запуска Spark в `N` потоках.
+
+Для тестирования используется опция `local`.
+Полный список параметров можно посмотреть, запустив командную оболочку Spark с параметром `--help`.
+
+Spark также предоставляет Python API.
+Для интерактивного запуска Spark в интерпретаторе Python используется `bin/pyspark`:
+```
+./bin/pyspark --master local[2]
+```
+
+Часть примеров для Spark в директории `examples` написана на Python.
+Например, запуск [`examples/src/main/python/pi.py`](https://github.com/apache/spark/blob/82a41d8ca273e7a93333268324c6958f8bb14d9e/examples/src/main/python/pi.py) выглядит следующим образом:
+```
+./bin/spark-submit examples/src/main/python/pi.py 10
+```
+
+Начиная с версии 1.4, Spark предоставляет [API](https://spark.apache.org/docs/latest/sparkr.html) для R (только API для DataFrames добавлено).
+Запуск Spark в интерпретаторе R выполняется при помощи команды `bin/sparkR`:
+```
+./bin/sparkR --master local[2]
+```
+
+В директории `examples` можно найти примеры на языке R:
+```
+./bin/spark-представить примеры/src/main/r/dataframe.R
+```
