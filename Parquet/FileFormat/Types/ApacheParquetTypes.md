@@ -1,19 +1,19 @@
 # Типы 
 
 The types supported by the file format are intended to be as minimal 
-as possible, with a focus on how the types effect on disk storage. 
-Например, 16-битные инты явно не поддерживаются в формате хранения, 
-поскольку они покрываются 32-битными интами с эффективным кодированием. 
-Это снижает сложность реализации считывающих и записывающих 
-устройств для формата. К типам относятся: 
-```
-BOOLEAN: 1 bit boolean
-INT32: 32 bit signed ints
-INT64: 64 bit signed ints
-INT96: 96 bit signed ints
-FLOAT: IEEE 32-bit floating point values
-DOUBLE: IEEE 64-bit floating point values
-BYTE_ARRAY: arbitrarily long byte arrays.
-``` 
+as possible, with a focus on how the types effect on disk storage.
+Типы данных, которые поддерживает parquet, должны быть ограничены настолько на сколько это возможно с учетом того, как эти типы влияют на расположение данных на диске.
+Например, целые числа размером 16-бит не имееют явной поддержки в формате parquet, поскольку их можно заменить целыми числами размера 32-бит с поддержкой эффективного кодирования. 
+Это снижает сложность реализации парсеров. Поддерживаются следующие типы:
+
+
+- `BOOLEAN`: логическое значение (1 bit); 
+- `INT32`: целое число со знаком (32 bit); 
+- `INT64`: целое число со знаком (64 bit); 
+- `INT96`: целое число со знаком (96 bit); 
+- `FLOAT`: число с плавающей точкой в формате IEEE (32 bit); 
+- `DOUBLE`: число с плавающей точкой в формате IEEE (64 bit);
+- `BYTE_ARRAY`: массив байт произвольной длины.
+ 
 
 [Logical Types](ApacheParquetLogicalTypes.md)
